@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>DotnetPdfGen Playground</title>
+  <link rel="stylesheet" href="app.css">
+</head>
+<body>
+  <header class="topbar">
+    <div class="brand">
+      <span class="brand-mark" aria-hidden="true">P</span>
+      <span class="brand-name">DotnetPdfGen</span>
+      <span class="brand-sub">Playground</span>
+    </div>
+
+    <div class="controls">
+      <label class="field">
+        <span>Template</span>
+        <select id="sample"><option value="">Blank</option></select>
+      </label>
+      <label class="field">
+        <span>Size</span>
+        <select id="page-size">
+          <option>A4</option><option>A3</option><option>A5</option><option>Letter</option><option>Legal</option>
+        </select>
+      </label>
+      <label class="field">
+        <span>Orientation</span>
+        <select id="orientation"><option>Portrait</option><option>Landscape</option></select>
+      </label>
+      <label class="field narrow">
+        <span>Margin (mm)</span>
+        <input id="margin" type="number" min="0" max="100" value="20">
+      </label>
+    </div>
+
+    <div class="actions">
+      <label class="toggle"><input id="auto" type="checkbox" checked> Auto-render</label>
+      <button id="render" class="primary" type="button">Render</button>
+      <button id="download" type="button" disabled>Download</button>
+    </div>
+  </header>
+
+  <p id="description" class="description"></p>
+
+  <main class="workspace">
+    <section class="pane editor-pane" aria-label="Template editor">
+      <div class="tabs" role="tablist">
+        <button role="tab" class="tab active" data-editor="html" aria-selected="true">HTML</button>
+        <button role="tab" class="tab" data-editor="css" aria-selected="false">CSS</button>
+        <button role="tab" class="tab" data-editor="data" aria-selected="false">Data (JSON)</button>
+      </div>
+      <textarea id="editor-html" class="editor" spellcheck="false" aria-label="HTML template"></textarea>
+      <textarea id="editor-css" class="editor" spellcheck="false" aria-label="CSS" hidden></textarea>
+      <textarea id="editor-data" class="editor" spellcheck="false" aria-label="JSON data" hidden></textarea>
+      <div class="hint">
+        Bind values with <code>{{Name}}</code>, loop with <code>{{#each Items}}…{{/each}}</code>,
+        branch with <code>{{#if Paid}}…{{/if}}</code>, format with <code>{{format Total "N2"}}</code>.
+        A CSS <code>@page</code> rule overrides the size, orientation and margin controls.
+      </div>
+    </section>
+
+    <section class="pane preview-pane" aria-label="Preview">
+      <div class="tabs" role="tablist">
+        <button role="tab" class="tab active" data-view="pdf" aria-selected="true">PDF</button>
+        <button role="tab" class="tab" data-view="html" aria-selected="false">Bound HTML</button>
+        <span class="spacer"></span>
+        <a class="link" href="/api/examples/invoice" target="_blank" rel="noopener" title="Rendered from a C# Invoice record">Typed C# example ↗</a>
+      </div>
+      <div class="preview">
+        <iframe id="pdf-frame" title="PDF preview"></iframe>
+        <iframe id="html-frame" title="Bound HTML preview" sandbox hidden></iframe>
+        <div id="empty" class="empty">Pick a template or start typing to render a PDF.</div>
+      </div>
+      <div id="status" class="status" role="status" aria-live="polite"></div>
+    </section>
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>

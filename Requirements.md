@@ -1,0 +1,4 @@
+# Objective
+The goal of this repository is to create a dotnet based PDF generation library that accepts HTML + CSS template data to describe the format of the pdf. The library will be able bind values from the dotnet code into the html (i.e. {{Title}} in the HTML will bind to a user supplied value in the C# code so the value can be bound to the template).
+
+The DotnetPdfGen.Web project should be a project to demonstrate and test the capabilities of the library. A separate project should be added that will be the source code for the library so it can eventually be packaged up as its own shareable library of code. 

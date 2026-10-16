@@ -1,0 +1,30 @@
+@page { size: A4 landscape; margin: 12mm; }
+
+body { margin: 0; font-family: Georgia, "Times New Roman", serif; color: #2a2a2a; }
+.frame {
+  box-sizing: border-box;
+  height: 184mm; /* A4 landscape height minus the @page margins, with a little slack */
+  border: 6px double #9c7a2b;
+  border-radius: 4px;
+  padding: 16mm 20mm 10mm;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  background: radial-gradient(circle at center, #fffdf6 0%, #f6efdc 100%);
+}
+.eyebrow { font-family: Arial, sans-serif; letter-spacing: 0.3em; text-transform: uppercase; font-size: 9pt; color: #9c7a2b; }
+h1 { font-size: 30pt; font-weight: normal; margin: 8mm 0 6mm; }
+.lead { font-style: italic; color: #666; margin: 2mm 0; }
+.recipient { align-self: center; font-size: 28pt; color: #6b4e12; border-bottom: 1px solid #c9b27a; display: inline-block; padding: 0 12mm 2mm; margin: 2mm 0 4mm; }
+.course { font-size: 16pt; }
+.footer { display: flex; justify-content: space-between; align-items: flex-end; margin-top: 16mm; }
+.sig { width: 60mm; font-size: 10pt; }
+.sig .line { border-top: 1px solid #555; margin-bottom: 2mm; }
+.muted { color: #888; font-size: 9pt; }
+.seal {
+  width: 26mm; height: 26mm; border-radius: 50%;
+  background: conic-gradient(#c9a43c, #f3dc8a, #c9a43c, #f3dc8a, #c9a43c);
+  display: flex; align-items: center; justify-content: center;
+  font-family: Arial, sans-serif; font-weight: bold; color: #5a4311;
+}

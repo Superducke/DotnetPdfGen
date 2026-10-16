@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Certificate for {{Recipient}}</title>
+</head>
+<body>
+  <div class="frame">
+    <div class="eyebrow">{{Issuer}}</div>
+    <h1>Certificate of {{Kind}}</h1>
+    <p class="lead">This certifies that</p>
+    <div class="recipient">{{Recipient}}</div>
+    <p class="lead">has successfully completed</p>
+    <div class="course">{{Course}}</div>
+    <div class="footer">
+      <div class="sig">
+        <div class="line"></div>
+        <div>{{SignedBy}}</div>
+        <div class="muted">{{SignerTitle}}</div>
+      </div>
+      <div class="seal">{{format AwardedOn "yyyy"}}</div>
+      <div class="sig">
+        <div class="line"></div>
+        <div>{{format AwardedOn "d MMMM yyyy"}}</div>
+        <div class="muted">Date awarded</div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

@@ -1,0 +1,10 @@
+<Solution>
+  <Folder Name="/src/">
+    <Project Path="src/DotnetPdfGen.Web/DotnetPdfGen.Web.csproj" />
+    <Project Path="src/DotnetPdfGen/DotnetPdfGen.csproj" />
+  </Folder>
+  <Folder Name="/tests/">
+    <Project Path="tests/DotnetPdfGen.Tests/DotnetPdfGen.Tests.csproj" />
+    <Project Path="tests/DotnetPdfGen.Web.Tests/DotnetPdfGen.Web.Tests.csproj" />
+  </Folder>
+</Solution>

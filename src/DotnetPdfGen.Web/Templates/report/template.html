@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>{{Title}}</title>
+</head>
+<body>
+  <div class="running-title">{{Title}} · {{Period}}</div>
+
+  <h1>{{Title}}</h1>
+  <p class="subtitle">{{Period}} · prepared for {{PreparedFor}}</p>
+
+  <section class="kpis">
+    {{#each Kpis}}
+    <div class="kpi">
+      <div class="kpi-label">{{Label}}</div>
+      <div class="kpi-value">{{Value}}</div>
+      <div class="kpi-change {{#if Up}}up{{else}}down{{/if}}">{{#if Up}}▲{{else}}▼{{/if}} {{Change}}</div>
+    </div>
+    {{/each}}
+  </section>
+
+  <h2>Revenue by region</h2>
+  <div class="chart">
+    {{#each Regions}}
+    <div class="bar-row">
+      <div class="bar-label">{{Name}}</div>
+      <div class="bar-track"><div class="bar" style="width: {{Share}}%"></div></div>
+      <div class="bar-value">{{format Revenue "N0"}}</div>
+    </div>
+    {{/each}}
+  </div>
+
+  <h2>Highlights</h2>
+  <ul class="highlights">
+    {{#each Highlights}}<li>{{this}}</li>{{/each}}
+  </ul>
+
+  <section class="appendix">
+    <h2>Appendix: account detail</h2>
+    <table>
+      <thead><tr><th>Account</th><th>Region</th><th class="num">Orders</th><th class="num">Revenue</th></tr></thead>
+      <tbody>
+        {{#each Accounts}}
+        <tr><td>{{Name}}</td><td>{{Region}}</td><td class="num">{{Orders}}</td><td class="num">{{format Revenue "N0"}}</td></tr>
+        {{/each}}
+      </tbody>
+    </table>
+  </section>
+</body>
+</html>

@@ -1,0 +1,42 @@
+@page {
+  size: A4;
+  margin: 18mm 16mm 20mm;
+  @bottom-center {
+    content: "Page " counter(page) " of " counter(pages);
+    font-family: Arial, sans-serif;
+    font-size: 8pt;
+    color: #888;
+  }
+}
+
+body { font-family: Arial, sans-serif; font-size: 10pt; color: #222; margin: 0; }
+.muted { color: #777; }
+.strong { font-weight: bold; }
+.label { font-size: 8pt; text-transform: uppercase; letter-spacing: 0.08em; color: #1f4e79; margin-bottom: 4px; }
+
+.masthead { display: flex; justify-content: space-between; align-items: center; padding-bottom: 12px; border-bottom: 3px solid #1f4e79; }
+.brand { display: flex; align-items: center; gap: 10px; }
+.company { font-size: 14pt; font-weight: bold; }
+.doc-title { text-align: right; }
+.doc-title h1 { margin: 0; font-size: 22pt; color: #1f4e79; }
+
+.stamp { float: right; margin-top: 10px; padding: 4px 14px; border: 2px solid #2e7d32; color: #2e7d32; border-radius: 6px; font-weight: bold; text-transform: uppercase; transform: rotate(-6deg); }
+
+.parties { display: flex; gap: 16px; margin: 18px 0; clear: both; }
+.card { flex: 1; background: #f3f6fa; border-radius: 6px; padding: 10px 12px; }
+.kv th { text-align: left; font-weight: normal; color: #777; padding-right: 12px; }
+
+table { border-collapse: collapse; }
+.items { width: 100%; }
+.items th { background: #1f4e79; color: #fff; text-align: left; padding: 6px 8px; font-weight: normal; }
+.items td { padding: 6px 8px; border-bottom: 1px solid #e3e7ec; }
+.items tbody tr:nth-child(even) td { background: #fafbfc; }
+.items .num { text-align: right; }
+
+.totals-wrap { display: flex; justify-content: flex-end; margin-top: 12px; }
+.totals { min-width: 45%; }
+.totals th { text-align: left; font-weight: normal; padding: 4px 8px; color: #555; }
+.totals td { text-align: right; padding: 4px 8px; }
+.totals .grand th, .totals .grand td { border-top: 2px solid #1f4e79; font-weight: bold; font-size: 12pt; color: #1f4e79; padding-top: 8px; }
+
+.notes { margin-top: 24px; page-break-inside: avoid; }

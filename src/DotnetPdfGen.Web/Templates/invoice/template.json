@@ -1,0 +1,4 @@
+{
+  "title": "Invoice",
+  "description": "Line items with {{#each}}, currency/date formatting, a conditional PAID stamp, and page numbers in the footer."
+}

@@ -1,0 +1,32 @@
+@DotnetPdfGen.Web_HostAddress = http://localhost:5134
+
+### List sample templates
+GET {{DotnetPdfGen.Web_HostAddress}}/api/samples
+
+### Render a sample with its bundled data
+GET {{DotnetPdfGen.Web_HostAddress}}/api/samples/invoice/pdf
+
+### Render the invoice from a typed C# model
+GET {{DotnetPdfGen.Web_HostAddress}}/api/examples/invoice?paid=false
+
+### Render an ad-hoc template
+POST {{DotnetPdfGen.Web_HostAddress}}/api/pdf
+Content-Type: application/json
+
+{
+  "html": "<h1>Hello {{name}}</h1>{{#each items}}<p>{{this}}</p>{{/each}}",
+  "css": "h1 { color: #1f4e79; }",
+  "data": { "name": "Ada", "items": ["One", "Two"] },
+  "page": { "size": "Letter", "orientation": "Landscape", "marginMm": 15 }
+}
+
+### Preview the bound HTML without rendering
+POST {{DotnetPdfGen.Web_HostAddress}}/api/pdf/html
+Content-Type: application/json
+
+{
+  "html": "<p>{{greeting}}, {{name}}!</p>",
+  "data": { "greeting": "Hi", "name": "Grace" }
+}
+
+###

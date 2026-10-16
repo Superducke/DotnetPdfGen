@@ -1,0 +1,19 @@
+{
+  "Number": "INV-2026-0042",
+  "IssuedOn": "2026-10-16",
+  "DueOn": "2026-11-15",
+  "Currency": "USD",
+  "Paid": true,
+  "Seller": { "Name": "Superducke Ltd", "Address": "12 Quay Street, Bristol BS1 4DJ" },
+  "Customer": { "Name": "Ada Lovelace", "Address": "1 Analytical Way, London", "Email": "ada@example.com" },
+  "Lines": [
+    { "Description": "Template design workshop", "Quantity": 2, "UnitPrice": 650.00, "Amount": 1300.00 },
+    { "Description": "PDF generation integration", "Quantity": 1, "UnitPrice": 2400.00, "Amount": 2400.00 },
+    { "Description": "Support hours", "Quantity": 6, "UnitPrice": 95.00, "Amount": 570.00 }
+  ],
+  "Subtotal": 4270.00,
+  "TaxRate": 0.2,
+  "Tax": 854.00,
+  "Total": 5124.00,
+  "Notes": "Thank you for your business. Payment by bank transfer within 30 days."
+}

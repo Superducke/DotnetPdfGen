@@ -1,0 +1,30 @@
+{
+  "Title": "Sales performance",
+  "Period": "September 2026",
+  "PreparedFor": "Leadership team",
+  "Kpis": [
+    { "Label": "Revenue", "Value": "$1.28M", "Change": "8.4%", "Up": true },
+    { "Label": "New customers", "Value": "214", "Change": "12.1%", "Up": true },
+    { "Label": "Churn", "Value": "2.3%", "Change": "0.4 pts", "Up": false }
+  ],
+  "Regions": [
+    { "Name": "North America", "Revenue": 540000, "Share": 100 },
+    { "Name": "Europe", "Revenue": 402000, "Share": 74 },
+    { "Name": "Asia Pacific", "Revenue": 236000, "Share": 44 },
+    { "Name": "Latin America", "Revenue": 102000, "Share": 19 }
+  ],
+  "Highlights": [
+    "Enterprise renewals closed two weeks ahead of plan.",
+    "Europe grew fastest quarter-on-quarter after the Paris launch.",
+    "Churn rose slightly in the self-serve tier; onboarding changes ship in October."
+  ],
+  "Accounts": [
+    { "Name": "Northwind", "Region": "North America", "Orders": 48, "Revenue": 182000 },
+    { "Name": "Contoso", "Region": "North America", "Orders": 35, "Revenue": 141000 },
+    { "Name": "Fabrikam", "Region": "Europe", "Orders": 31, "Revenue": 128000 },
+    { "Name": "Tailspin", "Region": "Europe", "Orders": 22, "Revenue": 96000 },
+    { "Name": "Wingtip", "Region": "Asia Pacific", "Orders": 27, "Revenue": 88000 },
+    { "Name": "Adventure Works", "Region": "Asia Pacific", "Orders": 19, "Revenue": 74000 },
+    { "Name": "Litware", "Region": "Latin America", "Orders": 14, "Revenue": 52000 }
+  ]
+}

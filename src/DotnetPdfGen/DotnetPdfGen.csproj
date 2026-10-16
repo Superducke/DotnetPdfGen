@@ -1,0 +1,49 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFrameworks>net8.0;net10.0</TargetFrameworks>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+    <GenerateDocumentationFile>true</GenerateDocumentationFile>
+    <RootNamespace>DotnetPdfGen</RootNamespace>
+  </PropertyGroup>
+
+  <PropertyGroup Label="Package">
+    <PackageId>DotnetPdfGen</PackageId>
+    <VersionPrefix>0.1.0</VersionPrefix>
+    <Authors>Superducke</Authors>
+    <Copyright>Copyright (c) 2026 Superducke</Copyright>
+    <Description>Generate PDF documents from HTML + CSS templates with {{Value}} data binding. Pure .NET: no headless browser or external process. Supports flexbox, CSS @page rules with page numbers, Handlebars loops and conditionals, and POCO, anonymous or JSON models.</Description>
+    <PackageTags>pdf;html-to-pdf;html;css;template;templating;handlebars;report;invoice</PackageTags>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
+    <PackageReadmeFile>README.md</PackageReadmeFile>
+    <PackageProjectUrl>https://github.com/Superducke/DotnetPdfGen</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/Superducke/DotnetPdfGen</RepositoryUrl>
+    <RepositoryType>git</RepositoryType>
+  </PropertyGroup>
+
+  <PropertyGroup Label="Source Link and symbols">
+    <PublishRepositoryUrl>true</PublishRepositoryUrl>
+    <EmbedUntrackedSources>true</EmbedUntrackedSources>
+    <IncludeSymbols>true</IncludeSymbols>
+    <SymbolPackageFormat>snupkg</SymbolPackageFormat>
+    <ContinuousIntegrationBuild Condition="'$(CI)' == 'true' or '$(GITHUB_ACTIONS)' == 'true'">true</ContinuousIntegrationBuild>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Include="..\..\README.md" Pack="true" PackagePath="\" Visible="false" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Handlebars.Net" Version="2.4.3" />
+    <PackageReference Include="Microsoft.Extensions.DependencyInjection.Abstractions" Version="8.0.2" />
+    <PackageReference Include="PeachPDF" Version="0.9.22" />
+    <!-- PeachPDF 0.9.22 depends on a Pkcs version with known vulnerabilities; pin a patched one. -->
+    <PackageReference Include="System.Security.Cryptography.Pkcs" Version="10.0.13" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <InternalsVisibleTo Include="DotnetPdfGen.Tests" />
+  </ItemGroup>
+
+</Project>
